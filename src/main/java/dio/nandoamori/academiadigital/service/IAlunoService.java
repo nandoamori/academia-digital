@@ -1,6 +1,7 @@
 package dio.nandoamori.academiadigital.service;
 
 import dio.nandoamori.academiadigital.entity.Aluno;
+import dio.nandoamori.academiadigital.entity.AvaliacaoFisica;
 import dio.nandoamori.academiadigital.entity.form.AlunoForm;
 import dio.nandoamori.academiadigital.entity.form.AlunoUpdateForm;
 
@@ -12,4 +13,6 @@ public interface IAlunoService {
     List<Aluno> getAll();
     Aluno update(Long id, AlunoUpdateForm formUpdate);
     void delete(Long id);
+
+    List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
 }

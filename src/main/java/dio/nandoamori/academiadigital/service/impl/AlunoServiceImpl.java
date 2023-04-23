@@ -1,6 +1,7 @@
 package dio.nandoamori.academiadigital.service.impl;
 
 import dio.nandoamori.academiadigital.entity.Aluno;
+import dio.nandoamori.academiadigital.entity.AvaliacaoFisica;
 import dio.nandoamori.academiadigital.entity.form.AlunoForm;
 import dio.nandoamori.academiadigital.entity.form.AlunoUpdateForm;
 import dio.nandoamori.academiadigital.repository.AlunoRepository;
@@ -46,4 +47,11 @@ public class AlunoServiceImpl implements IAlunoService {
     public void delete(Long id) {
 
     }
+
+    @Override
+    public List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id) {
+        Aluno aluno = repository.findById(id).get();
+        return aluno.getAvaliacao();
+    }
+
 }
