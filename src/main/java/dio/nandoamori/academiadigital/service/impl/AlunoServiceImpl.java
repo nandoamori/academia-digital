@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlunoServiceImpl implements IAlunoService {
@@ -30,8 +31,8 @@ public class AlunoServiceImpl implements IAlunoService {
     }
 
     @Override
-    public Aluno get(Long id) {
-        return null;
+    public Optional<Aluno> get(Long id) {
+        return repository.findById(id);
     }
 
     @Override
@@ -54,6 +55,7 @@ public class AlunoServiceImpl implements IAlunoService {
     @Override
     public void delete(Long id) {
 
+        repository.deleteById(id);
     }
 
     @Override
